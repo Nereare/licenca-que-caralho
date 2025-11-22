@@ -3,8 +3,6 @@ name: Servir Site
 on:
   push:
     branches: ["main"]
-    paths:
-      - page/**
 
 permissions:
   contents: read
@@ -21,13 +19,21 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+      - name: Setup Ruby
+        uses: ruby/setup-ruby@4a9ddd6f338a97768b8006bf671dfbad383215f4
+        with:
+          ruby-version: '3.2'
+          bundler-cache: true
+          cache-version: 0
       - name: Setup Pages
+        id: pages
         uses: actions/configure-pages@v5
       - name: Build with Jekyll
-        uses: actions/jekyll-build-pages@v1
-        with:
-          source: ./page/
-          destination: ./_site
+        run: |
+          cd page/
+          bundle exec jekyll build --baseurl "${{ steps.pages.outputs.base_path }}"
+        env:
+          JEKYLL_ENV: production
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
 
