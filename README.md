@@ -2,7 +2,7 @@
   <img
     style="width: 256px"
     alt="Logomarca para a licença, caracterizado por um bolo de fezes estilizado com uma medalha"
-    src="https://github.com/Nereare/licenca-que-caralho/blob/master/logo.svg?raw=true"
+    src="https://raw.githubusercontent.com/Nereare/licenca-que-caralho/refs/heads/main/logo.svg"
     />
 </p>
 
