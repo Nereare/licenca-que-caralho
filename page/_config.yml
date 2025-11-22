@@ -1,0 +1,15 @@
+# Base config
+title: Faça Que Caralho Você Quiser
+description: Uma adaptação para brasileiro da WTFPL
+logo: logo.png
+
+# Theme
+theme: jekyll-theme-so-simple
+plugins:
+  - jekyll-seo-tag
+  - jekyll-sitemap
+  - jemoji
+
+# Theme config
+locale: pt-BR
+read_time: false
